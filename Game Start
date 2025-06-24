@@ -1,55 +1,28 @@
-import time
-import random
+def start_game():
+    print ("The Quest")
+    print ("")
+    print ("The Ultimate Quest Game - by JadenKSTan")
 
-def startgame():
-  print ("THE QUEST")
-  print ("A Text Based Adventure Game")
-  play = input("Would you like to play? Type 'yes' or 'no' to start:")
-  if play == "yes":
-      print ("")
-      print ("Welcome traveller.")
-      start_game = input("Press enter to start.")
-      if start_game == "":
-          print ("")
-          choosename = input ("What is your name, traveller?")
-          print ("Hello,", choosename, ". It's nice to meet you.")
-          print ("I am the Narrator, your personal guide during your quest.")
-  
-          print ("")
-          #add function here
-      
-  else:
-      print ("")
-      print ("That's fine.")
-      print ("")
-      time.sleep(2)
-      print ("Here's a tip for you:")
-      randomtip = random.randint(1, 5)
-      if randomtip == 1:
-          print ("Listen to the wizard!")
-      elif randomtip == 2:
-          print ("The map does not contain all geographical features! It was a rough sketch by a dwarve.")
-      elif randomtip == 3:
-          print ("Fighting is luck, rank and skill. If you have those, you are more likely to win the fight.")
-      elif randomtip == 4:
-          print ("Remember, it's okay to choose a bad option, just restart and try again.")
-      else:
-          print ("Excalibur may be a good sword, but it's how you use it that matters!")
-      print ("")
-  
-      time.sleep(2)
-      print ("You're still here?")
-      time.sleep(2)
-      print ("That's odd.")
-      time.sleep(2)
-      print ("")
-      level_skip = input("Are you looking to skip to a level? Type 'yes' or 'no': ")
-      if level_skip == "yes":
-          print ("")
-          print ("Which level?")
-          print ("Oops! Under Construction.")
-          #add function here
-      else:
-          print ("")
-          print ("Sending you back to the loading screen.")
-          
+    def startorrestart():
+        while True:
+            startgame = input("Would you like to start the game? Type 'yes' or 'no' to continue with your action.")
+            if startgame == "yes" or "Yes":
+                print("The Game is Starting.")
+                return True
+            elif startgame == 'no':
+                #tips and tricks, other stuff
+                
+                restartgame = input("Would you like to restart the game? (Yes/No): ")
+                if restartgame == 'yes':
+                    print("Restarting...")
+                    continue
+                else:
+                    print("Thank you for playing. Your Quest ends here.")
+                    return False
+            else:
+                print("Please answer with either 'Yes' or 'No'.")
+
+    if startorrestart():
+        print("Start Game")
+
+start_game()
